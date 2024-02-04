@@ -1,0 +1,15 @@
+# gentoo crossdev based build.
+ENVS=ARCH=arm64 CROSS_COMPILE=aarch64-unknown-linux-gnu-
+
+.PHONY: config
+config:
+	KERNEL=kernel8 make ${ENVS} bcm2711_defconfig
+
+.PHONY: build
+build:
+	make ${ENVS} -j4 Image modules
+
+
+.PHONY: dtbs
+dtbs:
+	make ${ENVS} -j4 dtbs
