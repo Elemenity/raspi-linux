@@ -1,5 +1,24 @@
-Linux kernel
+Elemenity Linux kernel
 ============
+
+This repository contains the source code for the Linux
+Kernel used on Elemenity devices.
+
+https://www.elemenity.com/
+
+Since most users are likely to be using x86 based computers,
+we have included convenience scripts to cross-compile
+the kernel. This allows you to use your (likely much faster)
+x86 based computer to build the kernel for an aarch64 device.
+
+## Building
+```
+make -f Makefile.elemenity config
+# make your config changes
+make -f Makefile.elemenity build
+```
+
+## Other documentation
 
 There are several guides for kernel developers and users. These guides can
 be rendered in a number of formats, like HTML and PDF. Please read
